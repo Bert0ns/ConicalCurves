@@ -91,6 +91,13 @@ public class Fraction extends Number{
         return denominator;
     }
 
+    public static Fraction ConvertFromString(String str)
+    {
+
+
+        return null;
+    }
+
     public Fraction addFraction(Fraction f)
     {
         denominator *= f.getDenominator();
