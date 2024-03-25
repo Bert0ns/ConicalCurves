@@ -33,6 +33,10 @@ public class Fraction extends Number{
         ConvertToMinimalForm();
     }
 
+    /**
+     * Creates a Fraction Object converting the double value to a division of two int
+     * @param number value of the fraction
+     */
     public Fraction(double number)
     {
         denominator = 1;
