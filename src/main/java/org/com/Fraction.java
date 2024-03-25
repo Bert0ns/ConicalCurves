@@ -6,6 +6,20 @@ public class Fraction extends Number{
     private int numerator;
     private int denominator;
 
+    public Fraction()
+    {
+        this.numerator = 0;
+        this.denominator = 1;
+    }
+
+    public Fraction(Fraction fraction)
+    {
+        this.numerator = fraction.getNumerator();
+        this.denominator = fraction.getDenominator();
+
+        ConvertToMinimalForm();
+    }
+
     /**
      * Creates an object Fraction, in minimal form
      * @param numerator numerator of the fraction
@@ -37,8 +51,9 @@ public class Fraction extends Number{
      * Creates a Fraction Object converting the double value to a division of two int
      * @param number value of the fraction
      */
-    public Fraction(double number)
+    public Fraction(double n)
     {
+        float number = (float) n;
         denominator = 1;
 
         do{
@@ -89,6 +104,14 @@ public class Fraction extends Number{
      */
     public int getDenominator() {
         return denominator;
+    }
+
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
     }
 
     public static Fraction ConvertFromString(String str)

@@ -4,13 +4,17 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Matrix {
-    private Fraction [][] data;
-    private int ncols, nrows;
+    private final Fraction [][] data;
+    private final int ncols, nrows;
 
-    public Matrix(Fraction[][] data, int ncols, int nrows) {
-        this.data = new Fraction[ncols][nrows];
-        this.ncols = ncols;
-        this.nrows = nrows;
+    public Matrix(Fraction[][] data) {
+        if(data == null)
+        {
+            throw new IllegalArgumentException("Data array is null");
+        }
+        this.ncols = data[0].length;
+        this.nrows = data.length;
+        this.data = new Fraction[this.ncols][this.nrows];
 
         for(int i = 0; i < ncols; i++)
         {
@@ -18,11 +22,15 @@ public class Matrix {
         }
     }
 
-    public Matrix(double [][] data, int ncols, int nrows)
+    public Matrix(double[][] data)
     {
-        this.data = new Fraction[ncols][nrows];
-        this.ncols = ncols;
-        this.nrows = nrows;
+        if(data == null)
+        {
+            throw new IllegalArgumentException("Data array is null");
+        }
+        this.ncols = data[0].length;
+        this.nrows = data.length;
+        this.data = new Fraction[this.ncols][this.nrows];
         for(int i = 0; i < ncols; i++)
         {
             for (int j = 0; j < nrows; j++)
@@ -38,7 +46,37 @@ public class Matrix {
         {
             return null;
         }
-        //Fraction
+        else if(nrows == 1)
+        {
+            return new Fraction(data[0][0]);
+        }
+        else if(nrows == 2)
+        {
+            Fraction det = new Fraction(data[0][0]);
+            det.multiply(data[1][1]);
+            det.subtractFraction(new Fraction(data[1][0]).multiply(data[0][1]));
+            return det;
+        }
+        else if(nrows == 3)
+        {
+            /*
+            00 10 20
+            01 11 21
+            02 12 22
+            */
+
+            Fraction f1 = new Fraction(data[0][0]);
+            f1.multiply(data[1][1]).multiply(data[2][2]);
+            f1.addFraction(new Fraction(data[1][0]).multiply(data[2][1]).multiply(data[0][2]));
+            f1.addFraction(new Fraction(data[2][0]).multiply(data[0][1]).multiply(data[1][2]));
+
+            Fraction f2 = new Fraction(data[2][0]);
+            f2.multiply(data[1][1]).multiply(data[0][2]);
+            f2.addFraction(new Fraction(data[1][0]).multiply(data[0][1]).multiply(data[2][2]));
+            f2.addFraction(new Fraction(data[0][0]).multiply(data[2][1]).multiply(data[1][2]));
+
+            return f1.subtractFraction(f2);
+        }
 
         return null;
     }
