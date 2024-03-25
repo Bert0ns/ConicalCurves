@@ -49,7 +49,7 @@ public class Fraction extends Number{
 
     /**
      * Creates a Fraction Object converting the double value to a division of two int
-     * @param number value of the fraction
+     * @param n value of the fraction
      */
     public Fraction(double n)
     {
