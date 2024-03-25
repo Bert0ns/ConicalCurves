@@ -1,6 +1,6 @@
 package org.com;
 
-public class ConicalCurves {
+public class Main {
     public static void main(String[] args) {
         Fraction f1 = new Fraction(12, 4);
         Fraction f2 = new Fraction(15);
