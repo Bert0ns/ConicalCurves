@@ -25,5 +25,19 @@ public class Main {
         System.out.println(m.toString(true));
 
         System.out.println(m.determinant());
+
+        ConicalCurve conicalCurve1 = new ConicalCurve(m);
+        System.out.println(conicalCurve1.matrix);
+
+
+        //3 -2 2 4 6 1
+        /*
+        3 -1 2
+        -1 2 3
+        2 3 1
+         */
+        Fraction[] coef = {new Fraction(3),new Fraction(-2),new Fraction(2),new Fraction(4),new Fraction(6),new Fraction(1) };
+        ConicalCurve conicalCurve2 = new ConicalCurve(coef);
+        System.out.println(conicalCurve2.matrix);
     }
 }
