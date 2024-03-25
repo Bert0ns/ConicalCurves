@@ -1,7 +1,5 @@
 package org.com;
 
-import javax.swing.plaf.metal.MetalTabbedPaneUI;
-
 public class Main {
     public static void main(String[] args) {
         Fraction f1 = new Fraction(12, 4);
@@ -35,6 +33,7 @@ public class Main {
         3 -1 2
         -1 2 3
         2 3 1
+
          */
         Fraction[] coef = {new Fraction(3),new Fraction(-2),new Fraction(2),new Fraction(4),new Fraction(6),new Fraction(1) };
         ConicalCurve conicalCurve2 = new ConicalCurve(coef);
