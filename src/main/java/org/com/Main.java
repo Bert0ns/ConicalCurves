@@ -49,7 +49,15 @@ public class Main {
         Fraction[] coef3 = {new Fraction(3),new Fraction(2),new Fraction(3),new Fraction(0),new Fraction(0),new Fraction(-8) };
         ConicCurve conicCurve4 = new ConicCurve(coef3);
         System.out.println(conicCurve4);
+        /* hyperbole
+        0 -6 8 6 -4 -13
 
-
+        -13 3 -2
+        3 0 -3
+        -2 -3 8
+         */
+        Fraction[] coef5 = {new Fraction(0), new Fraction(-6), new Fraction(8), new Fraction(6), new Fraction(-4), new Fraction(-13)};
+        ConicCurve conicCurve5 = new ConicCurve(coef5);
+        System.out.println(conicCurve5);
     }
 }

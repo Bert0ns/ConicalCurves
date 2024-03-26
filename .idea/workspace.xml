@@ -7,7 +7,7 @@
     <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <workItem from="1711321662105" duration="2367000" />
       <workItem from="1711324043057" duration="655000" />
       <workItem from="1711444189643" duration="2959000" />
-      <workItem from="1711458119172" duration="8632000" />
+      <workItem from="1711458119172" duration="10080000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
@@ -132,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711466033444</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update">
+      <option name="closed" value="true" />
+      <created>1711467663068</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711467663068</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +173,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/com/ConicalCurves.java</url>
           <line>7</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/com/Main.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

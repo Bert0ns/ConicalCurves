@@ -122,8 +122,15 @@ public class ConicCurve {
         Fraction[] center = new Fraction[3];
 
         center[0] = getAxxMatrix(conicCurve.matrix, 0,0).determinant();
-        center[1] = getAxxMatrix(conicCurve.matrix, 0,1).determinant();
+        center[1] = getAxxMatrix(conicCurve.matrix, 0,1).determinant().multiply(new Fraction(-1));
         center[2] = getAxxMatrix(conicCurve.matrix, 0,2).determinant();
+
+        if(center[0].doubleValue() != 0)
+        {
+            center[1].divide(center[0]);
+            center[2].divide(center[0]);
+            center[0].divide(center[0]);
+        }
 
         return center;
     }
