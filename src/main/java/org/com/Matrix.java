@@ -1,8 +1,5 @@
 package org.com;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 public class Matrix {
     private final Fraction [][] data;
     private final int ncols, nrows;
@@ -105,31 +102,16 @@ public class Matrix {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Matrix matrix = (Matrix) o;
-        return getNcols() == matrix.getNcols() && getNrows() == matrix.getNrows() && Arrays.equals(getData(), matrix.getData());
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getNcols(), getNrows());
-        result = 31 * result + Arrays.hashCode(getData());
-        return result;
-    }
-
-    @Override
     public String toString() {
         StringBuilder matrix = new StringBuilder();
         for(int i = 0; i < ncols; i++)
         {
-            matrix.append("{ ");
+            matrix.append("[ ");
             for(int j = 0; j < nrows; j++)
             {
                 matrix.append(data[i][j].toString()).append(" ");
             }
-            matrix.append(" }\n");
+            matrix.append(" ]\n");
         }
 
         return matrix.toString();
@@ -140,12 +122,12 @@ public class Matrix {
             StringBuilder matrix = new StringBuilder();
             for(int i = 0; i < ncols; i++)
             {
-                matrix.append("{ ");
+                matrix.append("[ ");
                 for(int j = 0; j < nrows; j++)
                 {
                     matrix.append(data[i][j].doubleValue()).append(" ");
                 }
-                matrix.append(" }\n");
+                matrix.append(" ]\n");
             }
 
             return matrix.toString();

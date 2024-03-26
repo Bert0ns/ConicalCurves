@@ -32,7 +32,7 @@ public class Main {
          */
         Fraction[] coef1 = {new Fraction(1),new Fraction(6),new Fraction(1),new Fraction(0),new Fraction(0),new Fraction(-3) };
         ConicCurve conicCurve2 = new ConicCurve(coef1);
-        System.out.println("Conical curve 2:\n" + conicCurve2.type + "\n" + conicCurve2.getMatrix());
+        System.out.println(conicCurve2);
         /* parabola
         0 2 0
         2 1 1
@@ -40,13 +40,15 @@ public class Main {
          */
         Fraction[] coef2 = {new Fraction(1),new Fraction(2),new Fraction(1),new Fraction(4),new Fraction(0),new Fraction(0) };
         ConicCurve conicCurve3 = new ConicCurve(coef2);
-        System.out.println("Conical curve 3:\n" + conicCurve3.type + "\n" + conicCurve3.getMatrix());
-        /*
-
+        System.out.println(conicCurve3);
+        /* ellipse
+        -8 0 0
+        0 3 1
+        0 1 3
          */
         Fraction[] coef3 = {new Fraction(3),new Fraction(2),new Fraction(3),new Fraction(0),new Fraction(0),new Fraction(-8) };
         ConicCurve conicCurve4 = new ConicCurve(coef3);
-        System.out.println("Conical curve 4:\n" + conicCurve4.type + "\n" + conicCurve4.getMatrix());
+        System.out.println(conicCurve4);
 
 
     }

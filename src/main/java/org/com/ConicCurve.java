@@ -133,4 +133,19 @@ public class ConicCurve {
     public Matrix getMatrix() {
         return matrix;
     }
+
+    @Override
+    public String toString() {
+        return "ConicCurve{\n" +
+                "matrix:\n" + matrix +
+                "type=" + type +
+                " }";
+    }
+
+    public String toString(boolean risToDouble) {
+        return "ConicCurve{\n" +
+                "matrix:\n" + matrix.toString(risToDouble) +
+                "type=" + type +
+                " }";
+    }
 }

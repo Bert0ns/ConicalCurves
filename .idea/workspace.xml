@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicalCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" afterDir="false" />
     </list>
@@ -96,7 +95,7 @@
       <workItem from="1711321662105" duration="2367000" />
       <workItem from="1711324043057" duration="655000" />
       <workItem from="1711444189643" duration="2959000" />
-      <workItem from="1711458119172" duration="4343000" />
+      <workItem from="1711458119172" duration="4665000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
@@ -106,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711447064342</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update">
+      <option name="closed" value="true" />
+      <created>1711462517623</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711462517623</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,11 +146,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/com/ConicalCurves.java</url>
           <line>7</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
