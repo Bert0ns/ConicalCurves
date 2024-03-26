@@ -1,8 +1,11 @@
 package org.com;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.awt.*;
+
 public class ConicCurve {
     private final Matrix matrix;
-    public ConicCurveType type;
     public enum ConicCurveType
     {
         ELLIPSE,
@@ -18,14 +21,13 @@ public class ConicCurve {
     public ConicCurve(Matrix matrix)
     {
         this.matrix = matrix;
-        this.type = determineType(this.matrix);
     }
 
     /**
      * Returns a ConicalCurve Object
      * @param coefficients coefficients in this order ax^2 + bxy + cy^2 + dx + ey + f = 0
      */
-    public ConicCurve(Fraction[] coefficients)
+    public ConicCurve(Fraction @NotNull [] coefficients)
     {
         if(coefficients.length != 6)
         {
@@ -48,10 +50,30 @@ public class ConicCurve {
         dataMatrix[1][2] = dataMatrix[2][1] = coefficients[1].divide(new Fraction(2));
 
         matrix = new Matrix(dataMatrix);
-        this.type = determineType(this.matrix);
+    }
+    public Matrix getMatrix() {
+        return matrix;
+    }
+    @Override
+    public String toString() {
+        return "ConicCurve{\n" +
+                "matrix:\n" + matrix +
+                "type=" + determineType(matrix) +
+                " }";
+    }
+    public String toString(boolean risToDouble) {
+        return "ConicCurve{\n" +
+                "matrix:\n" + matrix.toString(risToDouble) +
+                "type=" + determineType(matrix) +
+                " }";
     }
 
-    public static ConicCurveType determineType(Matrix matrix)
+    /**
+     * From a Matrix it creates a ConicCurve
+     * @param matrix matrix associated to the conic curve
+     * @return enum that has the type of the conic curve;
+     */
+    public static ConicCurveType determineType(@NotNull Matrix matrix)
     {
         if(matrix.getNrows() != matrix.getNcols())
         {
@@ -81,7 +103,6 @@ public class ConicCurve {
 
         return ConicCurveType.PARABOLA;
     }
-
     /**
      * From Matrix src removes the row at indexRow and the column at indexCol and returns what's left
      * @param src source matrix
@@ -89,7 +110,7 @@ public class ConicCurve {
      * @param indexCol index col to remove
      * @return new Matrix [n-1] * [m-1]
      */
-    public static Matrix getAxxMatrix(Matrix src, int indexRow, int indexCol)
+    public static @NotNull Matrix getAxxMatrix(@NotNull Matrix src, int indexRow, int indexCol)
     {
         if(src.getNcols() < 2 || src.getNrows() < 2)
         {
@@ -128,24 +149,5 @@ public class ConicCurve {
         }
 
         return axx;
-    }
-
-    public Matrix getMatrix() {
-        return matrix;
-    }
-
-    @Override
-    public String toString() {
-        return "ConicCurve{\n" +
-                "matrix:\n" + matrix +
-                "type=" + type +
-                " }";
-    }
-
-    public String toString(boolean risToDouble) {
-        return "ConicCurve{\n" +
-                "matrix:\n" + matrix.toString(risToDouble) +
-                "type=" + type +
-                " }";
     }
 }
