@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="update" />
+    <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicalCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicalCurve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,31 +40,31 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ConicalCurves.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ConicalCurves [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ConicalCurves [test].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/david/IdeaProjects/ConicalCurves/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ConicalCurves.executor": "Debug",
+    "Application.Main.executor": "Debug",
+    "Maven.ConicalCurves [clean].executor": "Run",
+    "Maven.ConicalCurves [test].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/david/IdeaProjects/ConicalCurves/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -90,51 +94,23 @@
       <workItem from="1711320278852" duration="1369000" />
       <workItem from="1711321662105" duration="2367000" />
       <workItem from="1711324043057" duration="655000" />
-      <workItem from="1711362092222" duration="3620000" />
-      <workItem from="1711379700329" duration="6612000" />
+      <workItem from="1711444189643" duration="2472000" />
     </task>
-    <task id="LOCAL-00001" summary="matrix class update">
-      <option name="closed" value="true" />
-      <created>1711379771062</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1711379771062</updated>
-    </task>
-    <task id="LOCAL-00002" summary="matrix class update">
-      <option name="closed" value="true" />
-      <created>1711383267189</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1711383267189</updated>
-    </task>
-    <task id="LOCAL-00003" summary="update">
-      <option name="closed" value="true" />
-      <created>1711383306487</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1711383306487</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update">
-      <option name="closed" value="true" />
-      <created>1711386586341</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1711386586341</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="matrix class update" />
-    <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -148,6 +124,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/com/ConicalCurves.java</url>
           <line>7</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/com/Main.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
