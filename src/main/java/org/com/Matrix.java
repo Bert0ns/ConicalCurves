@@ -7,6 +7,17 @@ public class Matrix {
     private final Fraction [][] data;
     private final int ncols, nrows;
 
+    /**
+     * Creates a Matrix Object, with a specified num of rows and columns, while the data in the matrix remains empty
+     * @param numCols number of columns
+     * @param numRows number of rows
+     */
+    public Matrix(int numCols, int numRows) {
+        this.ncols = numCols;
+        this.nrows = numRows;
+        this.data = new Fraction[this.ncols][this.nrows];
+    }
+
     public Matrix(Fraction[][] data) {
         if(data == null)
         {
