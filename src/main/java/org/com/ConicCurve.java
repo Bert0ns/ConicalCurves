@@ -7,7 +7,7 @@ import static org.com.Matrix.getAxxMatrix;
 public class ConicCurve {
     private final Matrix matrix;
     private final ConicCurveType type;
-    private final Fraction[] center;
+    private final Point3D center;
     public enum ConicCurveType
     {
         ELLIPSE,
@@ -42,14 +42,14 @@ public class ConicCurve {
         return "ConicCurve{\n" +
                 "matrix:\n" + matrix +
                 "type=" + type +
-                "\ncenter=[" + center[0] + ", " + center[1] + ", " + center[2] + "]" +
+                "\ncenter=" + center +
                 " }";
     }
     public String toString(boolean risToDouble) {
         return "ConicCurve{\n" +
                 "matrix:\n" + matrix.toString(risToDouble) +
                 "type=" + type +
-                "\ncenter=[" + center[0].doubleValue() + ", " + center[1].doubleValue() + ", " + center[2].doubleValue() + "]" +
+                "\ncenter=" + center +
                 " }";
     }
 
@@ -117,21 +117,13 @@ public class ConicCurve {
 
         return ConicCurveType.PARABOLA;
     }
-    public static Fraction @NotNull [] determineCenter(@NotNull ConicCurve conicCurve)
+    public static @NotNull Point3D determineCenter(@NotNull ConicCurve conicCurve)
     {
-        Fraction[] center = new Fraction[3];
-
-        center[0] = getAxxMatrix(conicCurve.matrix, 0,0).determinant();
-        center[1] = getAxxMatrix(conicCurve.matrix, 0,1).determinant().multiply(new Fraction(-1));
-        center[2] = getAxxMatrix(conicCurve.matrix, 0,2).determinant();
-
-        if(center[0].doubleValue() != 0)
-        {
-            center[1].divide(center[0]);
-            center[2].divide(center[0]);
-            center[0].divide(center[0]);
-        }
-
+        Point3D center = new Point3D();
+        center.coord[0] = getAxxMatrix(conicCurve.matrix, 0,0).determinant();
+        center.coord[1] = getAxxMatrix(conicCurve.matrix, 0,1).determinant().multiply(new Fraction(-1));
+        center.coord[2] = getAxxMatrix(conicCurve.matrix, 0,2).determinant();
+        center.reduceToMinimalForm();
         return center;
     }
 }
