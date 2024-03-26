@@ -146,7 +146,7 @@ public class Matrix {
      * @param indexCol index col to remove
      * @return new Matrix [n-1] * [m-1]
      */
-    public static @NotNull Matrix getAxxMatrix(@NotNull Matrix src, int indexRow, int indexCol)
+    public static @NotNull Matrix getMxxMatrix(@NotNull Matrix src, int indexRow, int indexCol)
     {
         if(src.getNcols() < 2 || src.getNrows() < 2)
         {

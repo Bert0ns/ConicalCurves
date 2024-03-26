@@ -2,7 +2,7 @@ package org.com;
 
 import org.jetbrains.annotations.NotNull;
 
-import static org.com.Matrix.getAxxMatrix;
+import static org.com.Matrix.getMxxMatrix;
 
 public class ConicCurve {
     private final Matrix matrix;
@@ -103,7 +103,7 @@ public class ConicCurve {
             return ConicCurveType.DEGENERATE;
         }
 
-        Matrix a00 = getAxxMatrix(conicCurve.matrix, 0, 0);
+        Matrix a00 = getMxxMatrix(conicCurve.matrix, 0, 0);
         Fraction det_a00 = a00.determinant();
 
         if(det_a00.doubleValue() > 0)
@@ -120,10 +120,11 @@ public class ConicCurve {
     public static @NotNull Point3D determineCenter(@NotNull ConicCurve conicCurve)
     {
         Point3D center = new Point3D();
-        center.coord[0] = getAxxMatrix(conicCurve.matrix, 0,0).determinant();
-        center.coord[1] = getAxxMatrix(conicCurve.matrix, 0,1).determinant().multiply(new Fraction(-1));
-        center.coord[2] = getAxxMatrix(conicCurve.matrix, 0,2).determinant();
+        center.coord[0] = getMxxMatrix(conicCurve.matrix, 0,0).determinant();
+        center.coord[1] = getMxxMatrix(conicCurve.matrix, 0,1).determinant().multiply(new Fraction(-1));
+        center.coord[2] = getMxxMatrix(conicCurve.matrix, 0,2).determinant();
         center.reduceToMinimalForm();
         return center;
     }
+
 }
