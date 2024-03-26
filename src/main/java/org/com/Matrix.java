@@ -1,5 +1,7 @@
 package org.com;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Matrix {
     private final Fraction [][] data;
     private final int ncols, nrows;
@@ -14,7 +16,6 @@ public class Matrix {
         this.nrows = numRows;
         this.data = new Fraction[this.ncols][this.nrows];
     }
-
     public Matrix(Fraction[][] data) {
         if(data == null)
         {
@@ -29,7 +30,6 @@ public class Matrix {
             System.arraycopy(data[i], 0, this.data[i], 0, nrows);
         }
     }
-
     public Matrix(double[][] data)
     {
         if(data == null)
@@ -88,21 +88,21 @@ public class Matrix {
 
         return null;
     }
-
-    public Fraction[][] getData() {
+    public Fraction[][] getData()
+    {
         return data;
     }
-
-    public int getNcols() {
+    public int getNcols()
+    {
         return ncols;
     }
-
-    public int getNrows() {
+    public int getNrows()
+    {
         return nrows;
     }
-
     @Override
-    public String toString() {
+    public String toString()
+    {
         StringBuilder matrix = new StringBuilder();
         for(int i = 0; i < ncols; i++)
         {
@@ -116,7 +116,8 @@ public class Matrix {
 
         return matrix.toString();
     }
-    public String toString(boolean risToDouble) {
+    public String toString(boolean risToDouble)
+    {
         if(risToDouble)
         {
             StringBuilder matrix = new StringBuilder();
@@ -136,5 +137,53 @@ public class Matrix {
             return toString();
         }
 
+    }
+
+    /**
+     * From Matrix src removes the row at indexRow and the column at indexCol and returns what's left
+     * @param src source matrix
+     * @param indexRow index row to remove
+     * @param indexCol index col to remove
+     * @return new Matrix [n-1] * [m-1]
+     */
+    public static @NotNull Matrix getAxxMatrix(@NotNull Matrix src, int indexRow, int indexCol)
+    {
+        if(src.getNcols() < 2 || src.getNrows() < 2)
+        {
+            throw new IllegalArgumentException("The Matrix src has to be at least 2x2");
+        }
+        if(indexRow >= src.getNrows())
+        {
+            throw  new IllegalArgumentException("The indexRow provided is out of matrix bounds");
+        }
+        if(indexCol >= src.getNcols())
+        {
+            throw  new IllegalArgumentException("The indexCol provided is out of matrix bounds");
+        }
+
+        Matrix axx = new Matrix(src.getNcols() - 1, src.getNrows() - 1);
+
+        int x = 0,y = 0;
+        for(int i = 0; i < src.getNcols(); i++)
+        {
+            if(i == indexCol)
+            {
+                continue;
+            }
+
+            for(int j = 0; j < src.getNrows(); j++)
+            {
+                if(j == indexRow)
+                {
+                    continue;
+                }
+
+                axx.getData()[x][y++] = new Fraction(src.getData()[i][j]);
+            }
+            x++;
+            y = 0;
+        }
+
+        return axx;
     }
 }

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConicalCurves.executor": "Debug",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Maven.ConicalCurves [clean].executor": "Run",
     "Maven.ConicalCurves [test].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -98,7 +98,7 @@
       <workItem from="1711321662105" duration="2367000" />
       <workItem from="1711324043057" duration="655000" />
       <workItem from="1711444189643" duration="2959000" />
-      <workItem from="1711458119172" duration="7143000" />
+      <workItem from="1711458119172" duration="8632000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
@@ -124,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711463060255</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update">
+      <option name="closed" value="true" />
+      <created>1711466033444</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711466033444</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
