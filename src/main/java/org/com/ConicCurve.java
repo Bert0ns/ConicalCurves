@@ -32,7 +32,7 @@ public class ConicCurve {
 
         if(type == ConicCurveType.HYPERBOLE)
         {
-            pointsAtInfinity = determinePointstoTheInfinity(this);
+            pointsAtInfinity = determinePointsToTheInfinity(this);
         }
         else
         {
@@ -52,7 +52,7 @@ public class ConicCurve {
 
         if(type == ConicCurveType.HYPERBOLE)
         {
-            pointsAtInfinity = determinePointstoTheInfinity(this);
+            pointsAtInfinity = determinePointsToTheInfinity(this);
         }
         else
         {
@@ -69,10 +69,14 @@ public class ConicCurve {
                 " }";
     }
     public String toString(boolean risToDouble) {
+        if(!risToDouble)
+        {
+            return toString();
+        }
         return "ConicCurve{\n" +
-                "matrix:\n" + matrix.toString(risToDouble) +
+                "matrix:\n" + matrix.toString(true) +
                 "type=" + type +
-                "\ncenter=" + center.toString(risToDouble) +
+                "\ncenter=" + center.toString(true) +
                 "\npoints at infinity=" +"[" + pointsAtInfinity[0].toString(true) + "," + pointsAtInfinity[1].toString(true) + "]" +
                 " }";
     }
@@ -150,8 +154,7 @@ public class ConicCurve {
         center.reduceToMinimalForm();
         return center;
     }
-
-    public static Point3D @NotNull [] determinePointstoTheInfinity(final @NotNull ConicCurve conicCurve)
+    public static Point3D @NotNull [] determinePointsToTheInfinity(final @NotNull ConicCurve conicCurve)
     {
         Point3D[] inifinityPoints = new Point3D[2];
         if(conicCurve.type != ConicCurveType.HYPERBOLE)

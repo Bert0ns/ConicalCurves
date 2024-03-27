@@ -1,5 +1,7 @@
 package org.com;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 
 public class Point3D {
@@ -13,7 +15,7 @@ public class Point3D {
      * Creates a Point3D Object
      * @param coordinates homogeneous coordinates of a point [o,x,y]
      */
-    public Point3D(Fraction[] coordinates) {
+    public Point3D(@NotNull Fraction[] coordinates) {
         if(coord.length != 3)
         {
             throw new IllegalArgumentException("Wrong number of coordinates for a Point3D");
@@ -54,6 +56,10 @@ public class Point3D {
                 '}';
     }
     public String toString(boolean risToDouble) {
+        if(!risToDouble)
+        {
+            return toString();
+        }
         return "Point3D{" +
                 "coordinates=" + "[" + coord[0].toString(true) + "," + coord[1].toString(true) + "," + coord[2].toString(true) + "]" +
                 '}';

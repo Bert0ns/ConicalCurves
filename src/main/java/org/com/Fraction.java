@@ -106,14 +106,6 @@ public class Fraction extends Number{
         return denominator;
     }
 
-    public void setNumerator(int numerator) {
-        this.numerator = numerator;
-    }
-
-    public void setDenominator(int denominator) {
-        this.denominator = denominator;
-    }
-
     public static Fraction ConvertFromString(String str)
     {
 
@@ -188,6 +180,10 @@ public class Fraction extends Number{
         return "("+numerator + "/" + denominator+")";
     }
     public String toString(boolean risToDouble) {
+        if(!risToDouble)
+        {
+            return toString();
+        }
         return "("+ numerator/(double)denominator +")";
     }
 }
