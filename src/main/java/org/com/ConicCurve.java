@@ -156,8 +156,14 @@ public class ConicCurve {
 
         Fraction[] sol = solSecondGradeEquation(coefa, coefb, coefc);
         //double[] sol2 = solSecondGradeEquation(coefa.doubleValue(), coefb.doubleValue(), coefc.doubleValue());
-
-        inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(sol[0]), new Fraction(1));
+        if(sol[2].doubleValue() == 3)
+        {
+            inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(1), new Fraction(0));
+        }
+        else
+        {
+            inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(sol[0]), new Fraction(1));
+        }
         inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(sol[1]), new Fraction(1));
         return inifinityPoints;
     }
