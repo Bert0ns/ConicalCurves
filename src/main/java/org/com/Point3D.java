@@ -19,6 +19,7 @@ public class Point3D {
             throw new IllegalArgumentException("Wrong number of coordinates for a Point3D");
         }
         this.coord = coordinates;
+        reduceToMinimalForm();
     }
 
     /**
