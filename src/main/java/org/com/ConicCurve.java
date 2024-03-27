@@ -146,13 +146,11 @@ public class ConicCurve {
 	    d/2	  a	  b/2
 	    e/2  b/2   c
 
-        fix y = 1
-        ax^2 + bx + c = 0
 	    [1][1] -> a
 	    [2][2] -> c
 	    [1][2] * 2 -> b
 	    */
-        Fraction coefa = new Fraction(conicCurve.matrix.getData()[0][0]);
+        Fraction coefa = new Fraction(conicCurve.matrix.getData()[1][1]);
         Fraction coefb = new Fraction(conicCurve.matrix.getData()[1][2]).multiply(new Fraction(2));
         Fraction coefc = new Fraction(conicCurve.matrix.getData()[2][2]);
 
