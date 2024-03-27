@@ -127,4 +127,29 @@ public class ConicCurve {
         return center;
     }
 
+    public static Point3D[] determinePointstoTheInfinity(ConicCurve conicCurve)
+    {
+        if(conicCurve.type != ConicCurveType.HYPERBOLE)
+        {
+            throw new IllegalArgumentException("The conic curve has to be an HYPERBOLE");
+        }
+
+        Point3D[] inifinityPoints = new Point3D[2];
+        //ax^2 + bxy + cy^2
+        /*
+        ax^2 + bxy + cy^2 + dx + ey + f = 0
+
+	    f	 d/2  e/2
+	    d/2	  a	  b/2
+	    e/2  b/2   c
+
+	    [1][1] -> a
+	    [2][2] -> c
+	    [1][2] * 2 -> b
+	    */
+
+
+        return inifinityPoints;
+    }
+
 }
