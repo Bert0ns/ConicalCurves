@@ -59,5 +59,6 @@ public class Main {
         Fraction[] coef5 = {new Fraction(0), new Fraction(-6), new Fraction(8), new Fraction(6), new Fraction(-4), new Fraction(-13)};
         ConicCurve conicCurve5 = new ConicCurve(coef5);
         System.out.println(conicCurve5.toString(true));
+        System.out.println(conicCurve5.toString(false));
     }
 }

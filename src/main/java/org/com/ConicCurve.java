@@ -11,7 +11,7 @@ public class ConicCurve {
     public enum ConicCurveType
     {
         ELLIPSE,
-        HYPERBOLE,
+        HYPERBOLA,
         PARABOLA,
         DEGENERATE
     }
@@ -30,7 +30,7 @@ public class ConicCurve {
         type = determineType(this);
         center = determineCenter(this);
 
-        if(type == ConicCurveType.HYPERBOLE)
+        if(type == ConicCurveType.HYPERBOLA)
         {
             pointsAtInfinity = determinePointsToTheInfinity(this);
         }
@@ -50,7 +50,7 @@ public class ConicCurve {
         type = determineType(this);
         center = determineCenter(this);
 
-        if(type == ConicCurveType.HYPERBOLE)
+        if(type == ConicCurveType.HYPERBOLA)
         {
             pointsAtInfinity = determinePointsToTheInfinity(this);
         }
@@ -140,7 +140,7 @@ public class ConicCurve {
         }
         else if(det_a00.doubleValue() < 0)
         {
-            return ConicCurveType.HYPERBOLE;
+            return ConicCurveType.HYPERBOLA;
         }
 
         return ConicCurveType.PARABOLA;
@@ -157,7 +157,7 @@ public class ConicCurve {
     public static Point3D @NotNull [] determinePointsToTheInfinity(final @NotNull ConicCurve conicCurve)
     {
         Point3D[] inifinityPoints = new Point3D[2];
-        if(conicCurve.type != ConicCurveType.HYPERBOLE)
+        if(conicCurve.type != ConicCurveType.HYPERBOLA)
         {
             //throw new IllegalArgumentException("The conic curve has to be an HYPERBOLE");
             inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(0), new Fraction(0));
