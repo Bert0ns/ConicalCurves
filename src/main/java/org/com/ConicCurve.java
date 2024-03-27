@@ -1,13 +1,13 @@
 package org.com;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
+
 import static org.com.Mathematics.solSecondGradeEquation;
 import static org.com.Matrix.getMxxMatrix;
 
 public class ConicCurve {
-    private final Matrix matrix;
-    private final ConicCurveType type;
-    private final Point3D center;
     public enum ConicCurveType
     {
         ELLIPSE,
@@ -15,6 +15,10 @@ public class ConicCurve {
         PARABOLA,
         DEGENERATE
     }
+    private final Matrix matrix;
+    private final ConicCurveType type;
+    private final Point3D center;
+    private final Point3D[] pointsAtInfinity;
 
     /**
      * Returns a ConicalCurve Object
@@ -25,6 +29,15 @@ public class ConicCurve {
         this.matrix = matrix;
         type = determineType(this);
         center = determineCenter(this);
+
+        if(type == ConicCurveType.HYPERBOLE)
+        {
+            pointsAtInfinity = determinePointstoTheInfinity(this);
+        }
+        else
+        {
+            pointsAtInfinity = null;
+        }
     }
 
     /**
@@ -37,7 +50,14 @@ public class ConicCurve {
         type = determineType(this);
         center = determineCenter(this);
 
-        Point3D[] p = determinePointstoTheInfinity(this);
+        if(type == ConicCurveType.HYPERBOLE)
+        {
+            pointsAtInfinity = determinePointstoTheInfinity(this);
+        }
+        else
+        {
+            pointsAtInfinity = null;
+        }
     }
     @Override
     public String toString() {
@@ -45,13 +65,15 @@ public class ConicCurve {
                 "matrix:\n" + matrix +
                 "type=" + type +
                 "\ncenter=" + center +
+                "\npoints at infinity=" + Arrays.toString(pointsAtInfinity) +
                 " }";
     }
     public String toString(boolean risToDouble) {
         return "ConicCurve{\n" +
                 "matrix:\n" + matrix.toString(risToDouble) +
                 "type=" + type +
-                "\ncenter=" + center +
+                "\ncenter=" + center.toString(risToDouble) +
+                "\npoints at infinity=" +"[" + pointsAtInfinity[0].toString(true) + "," + pointsAtInfinity[1].toString(true) + "]" +
                 " }";
     }
 

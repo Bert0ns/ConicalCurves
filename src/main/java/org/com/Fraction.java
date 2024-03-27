@@ -187,4 +187,7 @@ public class Fraction extends Number{
     public String toString() {
         return "("+numerator + "/" + denominator+")";
     }
+    public String toString(boolean risToDouble) {
+        return "("+ numerator/(double)denominator +")";
+    }
 }

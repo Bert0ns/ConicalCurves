@@ -53,4 +53,9 @@ public class Point3D {
                 "coordinates=" + Arrays.toString(coord) +
                 '}';
     }
+    public String toString(boolean risToDouble) {
+        return "Point3D{" +
+                "coordinates=" + "[" + coord[0].toString(true) + "," + coord[1].toString(true) + "," + coord[2].toString(true) + "]" +
+                '}';
+    }
 }
