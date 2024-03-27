@@ -22,6 +22,16 @@ public class Point3D {
         reduceToMinimalForm();
     }
 
+    public Point3D(Fraction o, Fraction x, Fraction y)
+    {
+        coord = new Fraction[3];
+        coord[0] = o;
+        coord[1] = x;
+        coord[2] = y;
+
+        reduceToMinimalForm();
+    }
+
     /**
      * Simplifies the homogeneous coordinates in their minimal form
      */

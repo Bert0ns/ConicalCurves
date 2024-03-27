@@ -36,6 +36,8 @@ public class ConicCurve {
         matrix = determineMatrix(coefficients);
         type = determineType(this);
         center = determineCenter(this);
+
+        Point3D[] p = determinePointstoTheInfinity(this);
     }
     @Override
     public String toString() {
@@ -87,7 +89,7 @@ public class ConicCurve {
      * @param conicCurve Conic curve
      * @return enum that has the type of the conic curve;
      */
-    public static ConicCurveType determineType(@NotNull ConicCurve conicCurve)
+    public static ConicCurveType determineType(@NotNull final ConicCurve conicCurve)
     {
         if(conicCurve.matrix.getNrows() != conicCurve.matrix.getNcols())
         {
@@ -117,7 +119,7 @@ public class ConicCurve {
 
         return ConicCurveType.PARABOLA;
     }
-    public static @NotNull Point3D determineCenter(@NotNull ConicCurve conicCurve)
+    public static @NotNull Point3D determineCenter(@NotNull final ConicCurve conicCurve)
     {
         Point3D center = new Point3D();
         center.coord[0] = getMxxMatrix(conicCurve.matrix, 0,0).determinant();
@@ -127,14 +129,18 @@ public class ConicCurve {
         return center;
     }
 
-    public static Point3D[] determinePointstoTheInfinity(ConicCurve conicCurve)
+    public static Point3D @NotNull [] determinePointstoTheInfinity(final @NotNull ConicCurve conicCurve)
     {
+        Point3D[] inifinityPoints = new Point3D[2];
         if(conicCurve.type != ConicCurveType.HYPERBOLE)
         {
-            throw new IllegalArgumentException("The conic curve has to be an HYPERBOLE");
+            //throw new IllegalArgumentException("The conic curve has to be an HYPERBOLE");
+            inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(0), new Fraction(0));
+            inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(0), new Fraction(0));
+            return inifinityPoints;
         }
 
-        Point3D[] inifinityPoints = new Point3D[2];
+
         //ax^2 + bxy + cy^2
         /*
         ax^2 + bxy + cy^2 + dx + ey + f = 0
@@ -147,9 +153,60 @@ public class ConicCurve {
 	    [2][2] -> c
 	    [1][2] * 2 -> b
 	    */
+        Fraction coefa = new Fraction(conicCurve.matrix.getData()[0][0]);
+        Fraction coefb = new Fraction(conicCurve.matrix.getData()[1][2]).multiply(new Fraction(2));
+        Fraction coefc = new Fraction(conicCurve.matrix.getData()[2][2]);
 
+        Fraction[] sol = solSecondGradeEquation(coefa, coefb, coefc);
 
+        inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(sol[0]), new Fraction(1));
+        inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(sol[1]), new Fraction(1));
         return inifinityPoints;
     }
 
+    private static double[] solSecondGradeEquation(final double a,final double b,final double c)
+    {
+        double[] sol = {0, 0};
+
+        double discriminant = b * b - 4 * a * c;
+        if(discriminant < 0)
+        {
+            System.out.println("Error, Equation solutions complex");
+        }
+        else if(discriminant == 0)
+        {
+            sol[0] = sol[1] = (-b - Math.sqrt(discriminant))/(2*a);
+        } else if (discriminant > 0)
+        {
+            sol[0] = (-b - Math.sqrt(discriminant))/(2*a);
+            sol[1] = (-b + Math.sqrt(discriminant))/(2*a);
+        }
+        return sol;
+    }
+
+    public static Fraction @NotNull [] solSecondGradeEquation(final @NotNull Fraction coefa, final @NotNull Fraction coefb, final @NotNull Fraction coefc)
+    {
+        Fraction[] sol = new Fraction[2];
+        sol[0] = new Fraction(0);
+        sol[1] = new Fraction(0);
+
+        double a = coefa.doubleValue();
+        double b = coefb.doubleValue();
+        double c = coefc.doubleValue();
+
+        double discriminant = b * b - 4 * a * c;
+        if(discriminant < 0)
+        {
+            System.out.println("Error, Equation solutions complex");
+        }
+        else if(discriminant == 0)
+        {
+            sol[0] = sol[1] =new Fraction((-b - Math.sqrt(discriminant))/(2*a));
+        } else if (discriminant > 0)
+        {
+            sol[0] = new Fraction((-b - Math.sqrt(discriminant))/(2*a));
+            sol[1] = new Fraction((-b + Math.sqrt(discriminant))/(2*a));
+        }
+        return sol;
+    }
 }
