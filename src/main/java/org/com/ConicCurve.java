@@ -19,6 +19,7 @@ public class ConicCurve {
     private final ConicCurveType type;
     private final Point3D center;
     private final Point3D[] pointsAtInfinity;
+    private final PolarLine[] asymptotes;
 
     /**
      * Returns a ConicalCurve Object
@@ -33,10 +34,12 @@ public class ConicCurve {
         if(type == ConicCurveType.HYPERBOLA)
         {
             pointsAtInfinity = determinePointsToTheInfinity(this);
+            asymptotes = determineAsymptotes(this);
         }
         else
         {
             pointsAtInfinity = null;
+            asymptotes = null;
         }
     }
 
@@ -53,10 +56,12 @@ public class ConicCurve {
         if(type == ConicCurveType.HYPERBOLA)
         {
             pointsAtInfinity = determinePointsToTheInfinity(this);
+            asymptotes = determineAsymptotes(this);
         }
         else
         {
             pointsAtInfinity = null;
+            asymptotes = null;
         }
     }
     @Override
@@ -115,7 +120,7 @@ public class ConicCurve {
      * @param conicCurve Conic curve
      * @return enum that has the type of the conic curve;
      */
-    public static ConicCurveType determineType(@NotNull final ConicCurve conicCurve)
+    public static ConicCurveType determineType(final @NotNull ConicCurve conicCurve)
     {
         if(conicCurve.matrix.getNrows() != conicCurve.matrix.getNcols())
         {
@@ -145,7 +150,7 @@ public class ConicCurve {
 
         return ConicCurveType.PARABOLA;
     }
-    public static @NotNull Point3D determineCenter(@NotNull final ConicCurve conicCurve)
+    public static @NotNull Point3D determineCenter(final @NotNull ConicCurve conicCurve)
     {
         Point3D center = new Point3D();
         center.coord[0] = getMxxMatrix(conicCurve.matrix, 0,0).determinant();
@@ -154,15 +159,12 @@ public class ConicCurve {
         center.reduceToMinimalForm();
         return center;
     }
-    public static Point3D @NotNull [] determinePointsToTheInfinity(final @NotNull ConicCurve conicCurve)
+    public static Point3D[] determinePointsToTheInfinity(final @NotNull ConicCurve conicCurve)
     {
-        Point3D[] inifinityPoints = new Point3D[2];
         if(conicCurve.type != ConicCurveType.HYPERBOLA)
         {
             //throw new IllegalArgumentException("The conic curve has to be an HYPERBOLE");
-            inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(0), new Fraction(0));
-            inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(0), new Fraction(0));
-            return inifinityPoints;
+            return null;
         }
         /*
         ax^2 + bxy + cy^2 + dx + ey + f = 0
@@ -175,6 +177,7 @@ public class ConicCurve {
 	    [2][2] -> c
 	    [1][2] * 2 -> b
 	    */
+        Point3D[] inifinityPoints = new Point3D[2];
         Fraction coefa = new Fraction(conicCurve.matrix.getData()[1][1]);
         Fraction coefb = new Fraction(conicCurve.matrix.getData()[1][2]).multiply(new Fraction(2));
         Fraction coefc = new Fraction(conicCurve.matrix.getData()[2][2]);
@@ -191,5 +194,21 @@ public class ConicCurve {
         }
         inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(sol[1]), new Fraction(1));
         return inifinityPoints;
+    }
+    public static PolarLine[] determineAsymptotes(final @NotNull ConicCurve conicCurve)
+    {
+        if(conicCurve.type != ConicCurveType.HYPERBOLA)
+        {
+            return null;
+        }
+        if(conicCurve.pointsAtInfinity == null)
+        {
+            throw new IllegalArgumentException("The Hyperbola has no points to infinity but yopu tried to find their Polar Line");
+        }
+        PolarLine[] asymptotes = new PolarLine[2];
+
+        asymptotes[0] = new PolarLine(conicCurve.matrix, conicCurve.pointsAtInfinity[0]);
+        asymptotes[1] = new PolarLine(conicCurve.matrix, conicCurve.pointsAtInfinity[1]);
+        return asymptotes;
     }
 }

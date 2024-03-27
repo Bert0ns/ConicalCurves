@@ -48,7 +48,7 @@ public class Main {
          */
         Fraction[] coef3 = {new Fraction(3),new Fraction(2),new Fraction(3),new Fraction(0),new Fraction(0),new Fraction(-8) };
         ConicCurve conicCurve4 = new ConicCurve(coef3);
-        System.out.println(conicCurve4);
+        System.out.println(conicCurve4.toString(true));
         /* hyperbole
         0 -6 8 6 -4 -13
 
