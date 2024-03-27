@@ -139,9 +139,6 @@ public class ConicCurve {
             inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(0), new Fraction(0));
             return inifinityPoints;
         }
-
-
-        //ax^2 + bxy + cy^2
         /*
         ax^2 + bxy + cy^2 + dx + ey + f = 0
 
@@ -149,6 +146,8 @@ public class ConicCurve {
 	    d/2	  a	  b/2
 	    e/2  b/2   c
 
+        fix y = 1
+        ax^2 + bx + c = 0
 	    [1][1] -> a
 	    [2][2] -> c
 	    [1][2] * 2 -> b
@@ -158,6 +157,7 @@ public class ConicCurve {
         Fraction coefc = new Fraction(conicCurve.matrix.getData()[2][2]);
 
         Fraction[] sol = solSecondGradeEquation(coefa, coefb, coefc);
+        //double[] sol2 = solSecondGradeEquation(coefa.doubleValue(), coefb.doubleValue(), coefc.doubleValue());
 
         inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(sol[0]), new Fraction(1));
         inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(sol[1]), new Fraction(1));
