@@ -8,16 +8,14 @@ public class PolarLine {
 
 
     public PolarLine(@NotNull Fraction[] coefficients, @NotNull Point3D polar) {
-        if(coefficients.length != 3)
-        {
+        if (coefficients.length != 3) {
             throw new IllegalArgumentException("Wrong number of coefficients to create a PolarLine");
         }
         this.coefficients = coefficients;
         this.polar = polar;
     }
 
-    public PolarLine(@NotNull Matrix matrix, @NotNull Point3D polar)
-    {
+    public PolarLine(@NotNull Matrix matrix, @NotNull Point3D polar) {
         this.polar = polar;
         this.coefficients = new Fraction[3];
 

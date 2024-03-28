@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="Introduction of class PolarLine.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/PolarLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/PolarLine.java" afterDir="false" />
-    </list>
+    <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="Introduction of class PolarLine.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +42,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConicalCurves.executor": "Debug",
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Maven.ConicalCurves [clean].executor": "Run",
     "Maven.ConicalCurves [test].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -99,7 +95,7 @@
       <workItem from="1711324043057" duration="655000" />
       <workItem from="1711444189643" duration="2959000" />
       <workItem from="1711458119172" duration="13145000" />
-      <workItem from="1711562558608" duration="11608000" />
+      <workItem from="1711562558608" duration="11966000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
@@ -229,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711577583692</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Introduction of class PolarLine.java">
+      <option name="closed" value="true" />
+      <created>1711579694204</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711579694204</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,11 +272,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/com/ConicalCurves.java</url>
           <line>7</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/com/Main.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
