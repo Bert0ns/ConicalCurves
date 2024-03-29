@@ -61,6 +61,7 @@ public class Main {
         System.out.println(conicCurve5.toString(true));
         System.out.println(conicCurve5.toString(false));
 
+        //The way i make Fraction object is not good, i need an external library
         //TODO https://commons.apache.org/proper/commons-numbers/commons-numbers-docs/apidocs/org/apache/commons/numbers/fraction/Fraction.html
     }
 }
