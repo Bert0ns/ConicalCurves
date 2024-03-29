@@ -8,19 +8,11 @@ import static org.com.Mathematics.solSecondGradeEquation;
 import static org.com.Matrix.getMxxMatrix;
 
 public class ConicCurve {
-    public enum ConicCurveType {
-        ELLIPSE,
-        HYPERBOLA,
-        PARABOLA,
-        DEGENERATE
-    }
-
     private final Matrix matrix;
     private final ConicCurveType type;
     private final Point3D center;
     private final Point3D[] pointsAtInfinity;
     private final PolarLine[] asymptotes;
-
     /**
      * Returns a ConicalCurve Object
      *
@@ -57,28 +49,6 @@ public class ConicCurve {
             pointsAtInfinity = null;
             asymptotes = null;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "ConicCurve{\n" +
-                "matrix:\n" + matrix +
-                "type=" + type +
-                "\ncenter=" + center +
-                "\npoints at infinity=" + Arrays.toString(pointsAtInfinity) +
-                " }";
-    }
-
-    public String toString(boolean risToDouble) {
-        if (!risToDouble) {
-            return toString();
-        }
-        return "ConicCurve{\n" +
-                "matrix:\n" + matrix.toString(true) +
-                "type=" + type +
-                "\ncenter=" + center.toString(true) +
-                "\npoints at infinity=" + "[" + pointsAtInfinity[0].toString(true) + "," + pointsAtInfinity[1].toString(true) + "]" +
-                " }";
     }
 
     /**
@@ -191,5 +161,41 @@ public class ConicCurve {
         asymptotes[0] = new PolarLine(conicCurve.matrix, conicCurve.pointsAtInfinity[0]);
         asymptotes[1] = new PolarLine(conicCurve.matrix, conicCurve.pointsAtInfinity[1]);
         return asymptotes;
+    }
+
+    @Override
+    public String toString() {
+        return "ConicCurve{\n" +
+                "matrix:\n" + matrix +
+                "type=" + type +
+                "\ncenter=" + center +
+                "\npoints at infinity=" + Arrays.toString(pointsAtInfinity) +
+                " }";
+    }
+
+    public String toString(boolean risToDouble) {
+        if (!risToDouble) {
+            return toString();
+        }
+        StringBuilder tostring = new StringBuilder("ConicCurve{\n" +
+                                                    "matrix:\n" + matrix.toString(true) +
+                                                    "type=" + type +
+                                                    "\ncenter=" + center.toString(true));
+
+        if(pointsAtInfinity == null)
+        {
+            tostring.append("\npoints at infinity=null");
+            return tostring.toString();
+        }
+
+        tostring.append("\npoints at infinity=" + "[").append(pointsAtInfinity[0].toString(true)).append(",").append(pointsAtInfinity[1].toString(true)).append("]").append(" }");
+        return tostring.toString();
+    }
+
+    public enum ConicCurveType {
+        ELLIPSE,
+        HYPERBOLA,
+        PARABOLA,
+        DEGENERATE
     }
 }

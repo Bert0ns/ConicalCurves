@@ -7,6 +7,7 @@ import java.util.List;
 public abstract class Mathematics {
     /**
      * Solves the second grade equation provided in the form: coefa*x^2 + coefb*x + coefc = 0
+     * Currently it doesn't work
      *
      * @param coefa coefficient a of ax^2
      * @param coefb coefficient b of bx
