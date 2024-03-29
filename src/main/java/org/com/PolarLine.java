@@ -2,6 +2,8 @@ package org.com;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+
 public class PolarLine {
     final Fraction[] coefficients;
     final Point3D polar;
@@ -36,5 +38,20 @@ public class PolarLine {
         coefficients[2] = c1.addFraction(c2).addFraction(c3);
     }
 
-
+    @Override
+    public String toString() {
+        return "PolarLine{" +
+                "coefficients=" + Arrays.toString(coefficients) +
+                ", polar=" + polar +
+                '}';
+    }
+    public String toString(boolean risToDouble) {
+        if(!risToDouble)
+        {
+            return toString();
+        }
+        return "PolarLine{coefficients=" + coefficients[0].toString(true) + ", " + coefficients[1].toString(true) + ", " + coefficients[2].toString(true) + ", " +
+                          ", polar=" + polar.toString(true) +
+                          "}";
+    }
 }
