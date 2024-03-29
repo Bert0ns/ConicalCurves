@@ -58,7 +58,7 @@ public class Point3D {
             return toString();
         }
         return "Point3D{" +
-                "coordinates=" + "[" + coord[0].toString(true) + "," + coord[1].toString(true) + "," + coord[2].toString(true) + "]" +
+                "coordinates=" + "[" + coord[0].toString(true) + ", " + coord[1].toString(true) + ", " + coord[2].toString(true) + "]" +
                 '}';
     }
 }

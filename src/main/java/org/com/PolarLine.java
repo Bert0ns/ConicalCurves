@@ -33,9 +33,9 @@ public class PolarLine {
         Fraction c2 = new Fraction(matrix.getData()[0][1]).multiply(polar.coord[1]);
         Fraction c3 = new Fraction(matrix.getData()[0][2]).multiply(polar.coord[2]);
 
-        coefficients[0] = a1.addFraction(a2).addFraction(a3);
-        coefficients[1] = b1.addFraction(b2).addFraction(b3);
-        coefficients[2] = c1.addFraction(c2).addFraction(c3);
+        coefficients[0] = c1.addFraction(c2).addFraction(c3);
+        coefficients[1] = a1.addFraction(a2).addFraction(a3);
+        coefficients[2] = b1.addFraction(b2).addFraction(b3);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class PolarLine {
         {
             return toString();
         }
-        return "PolarLine{coefficients=" + coefficients[0].toString(true) + ", " + coefficients[1].toString(true) + ", " + coefficients[2].toString(true) + ", " +
+        return "PolarLine{" + coefficients[0].toString(true) + "x0 + " + coefficients[1].toString(true) + "x1 + " + coefficients[2].toString(true) + "x2 = 0]" +
                           ", polar=" + polar.toString(true) +
                           "}";
     }

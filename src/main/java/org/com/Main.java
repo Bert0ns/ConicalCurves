@@ -60,5 +60,7 @@ public class Main {
         ConicCurve conicCurve5 = new ConicCurve(coef5);
         System.out.println(conicCurve5.toString(true));
         System.out.println(conicCurve5.toString(false));
+
+        //TODO https://commons.apache.org/proper/commons-numbers/commons-numbers-docs/apidocs/org/apache/commons/numbers/fraction/Fraction.html
     }
 }

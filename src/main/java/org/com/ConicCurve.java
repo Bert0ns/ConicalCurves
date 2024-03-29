@@ -170,6 +170,7 @@ public class ConicCurve {
                 "type=" + type +
                 "\ncenter=" + center +
                 "\npoints at infinity=" + Arrays.toString(pointsAtInfinity) +
+                "\nasymptotes=" + Arrays.toString(asymptotes) +
                 " }";
     }
 
@@ -185,11 +186,22 @@ public class ConicCurve {
         if(pointsAtInfinity == null)
         {
             tostring.append("\npoints at infinity=null");
-            return tostring.toString();
+        }
+        else
+        {
+            tostring.append("\npoints at infinity=[").append(pointsAtInfinity[0].toString(true)).append(",").append(pointsAtInfinity[1].toString(true)).append("]");
         }
 
-        tostring.append("\npoints at infinity=" + "[").append(pointsAtInfinity[0].toString(true)).append(",").append(pointsAtInfinity[1].toString(true)).append("]").append(" }");
-        return tostring.toString();
+        if(asymptotes == null)
+        {
+            tostring.append("\nasymptotes=null");
+        }
+        else
+        {
+            tostring.append("\nasymptotes=[").append(asymptotes[0].toString(true)).append(", ").append(asymptotes[1].toString(true)).append("]");
+        }
+
+        return tostring.append("\n}").toString();
     }
 
     public enum ConicCurveType {
