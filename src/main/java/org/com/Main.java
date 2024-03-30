@@ -65,5 +65,6 @@ public class Main {
 
         //The way i make Fraction object is not good, i need an external library
         //TODO https://commons.apache.org/proper/commons-numbers/commons-numbers-docs/apidocs/org/apache/commons/numbers/fraction/Fraction.html
+        //https://commons.apache.org/proper/commons-numbers/
     }
 }
