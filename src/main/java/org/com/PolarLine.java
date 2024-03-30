@@ -1,6 +1,7 @@
 package org.com;
 
 import org.jetbrains.annotations.NotNull;
+import org.oldfiles.Fraction;
 
 import java.util.Arrays;
 

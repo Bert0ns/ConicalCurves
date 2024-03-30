@@ -1,8 +1,7 @@
 package org.com;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
+import org.oldfiles.Fraction;
 
 public abstract class Mathematics {
     /**

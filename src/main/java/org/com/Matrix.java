@@ -1,6 +1,7 @@
 package org.com;
 
 import org.jetbrains.annotations.NotNull;
+import org.oldfiles.Fraction;
 
 public class Matrix {
     private final Fraction[][] data;
