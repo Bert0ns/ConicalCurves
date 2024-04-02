@@ -2,6 +2,11 @@ package org.oldfiles;
 
 import java.util.Objects;
 
+/**
+ * Classe is deprecated.
+ * This class is something i created to represent Fraction numbers, but i late found out that someone had already made it
+ * Now using-> import org.apache.commons.numbers.fraction.Fraction;
+ */
 public class Fraction extends Number{
     private int numerator;
     private int denominator;
