@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Mathematics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Mathematics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Point3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/PolarLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/PolarLine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +109,7 @@
       <workItem from="1711749011689" duration="5433000" />
       <workItem from="1711797718071" duration="1504000" />
       <workItem from="1711799959338" duration="1018000" />
-      <workItem from="1712051827798" duration="2871000" />
+      <workItem from="1712051827798" duration="3306000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
@@ -308,7 +303,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711800938553</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="refactor of all code, to support the Apache Fractuion class">
+      <option name="closed" value="true" />
+      <created>1712054845961</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1712054845961</updated>
+    </task>
+    <task id="LOCAL-00026" summary="update">
+      <option name="closed" value="true" />
+      <created>1712055028185</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1712055028185</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +346,7 @@
     <MESSAGE value="reformatting files" />
     <MESSAGE value="bug fix on  ConicCurve.toString()" />
     <MESSAGE value="downloaded a library that takes care of fraction objects" />
+    <MESSAGE value="refactor of all code, to support the Apache Fractuion class" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
