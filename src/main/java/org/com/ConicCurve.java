@@ -1,9 +1,8 @@
 package org.com;
 
 import org.jetbrains.annotations.NotNull;
-import org.oldfiles.Fraction;
-
 import java.util.Arrays;
+import org.apache.commons.numbers.fraction.Fraction;
 
 import static org.com.Mathematics.solSecondGradeEquation;
 import static org.com.Matrix.getMxxMatrix;
@@ -73,9 +72,9 @@ public class ConicCurve {
         dataMatrix[1][1] = coefficients[0];
         dataMatrix[2][2] = coefficients[2];
 
-        dataMatrix[0][1] = dataMatrix[1][0] = coefficients[3].divide(new Fraction(2));
-        dataMatrix[0][2] = dataMatrix[2][0] = coefficients[4].divide(new Fraction(2));
-        dataMatrix[1][2] = dataMatrix[2][1] = coefficients[1].divide(new Fraction(2));
+        dataMatrix[0][1] = dataMatrix[1][0] = coefficients[3].divide(2);
+        dataMatrix[0][2] = dataMatrix[2][0] = coefficients[4].divide(2);
+        dataMatrix[1][2] = dataMatrix[2][1] = coefficients[1].divide(2);
 
         return new Matrix(dataMatrix);
     }
@@ -111,9 +110,9 @@ public class ConicCurve {
 
     public static @NotNull Point3D determineCenter(final @NotNull ConicCurve conicCurve) {
         Point3D center = new Point3D();
-        center.coord[0] = getMxxMatrix(conicCurve.matrix, 0, 0).determinant();
-        center.coord[1] = getMxxMatrix(conicCurve.matrix, 0, 1).determinant().multiply(new Fraction(-1));
-        center.coord[2] = getMxxMatrix(conicCurve.matrix, 0, 2).determinant();
+        center.coordinates[0] = getMxxMatrix(conicCurve.matrix, 0, 0).determinant();
+        center.coordinates[1] = getMxxMatrix(conicCurve.matrix, 0, 1).determinant().multiply(-1);
+        center.coordinates[2] = getMxxMatrix(conicCurve.matrix, 0, 2).determinant();
         center.reduceToMinimalForm();
         return center;
     }
@@ -135,18 +134,18 @@ public class ConicCurve {
 	    [1][2] * 2 -> b
 	    */
         Point3D[] inifinityPoints = new Point3D[2];
-        Fraction coefa = new Fraction(conicCurve.matrix.getData()[1][1]);
-        Fraction coefb = new Fraction(conicCurve.matrix.getData()[1][2]).multiply(new Fraction(2));
-        Fraction coefc = new Fraction(conicCurve.matrix.getData()[2][2]);
+        Fraction coefa = conicCurve.matrix.getData()[1][1];
+        Fraction coefb = conicCurve.matrix.getData()[1][2].multiply(2);
+        Fraction coefc = conicCurve.matrix.getData()[2][2];
 
         Fraction[] sol = solSecondGradeEquation(coefa, coefb, coefc);
         //double[] sol2 = solSecondGradeEquation(coefa.doubleValue(), coefb.doubleValue(), coefc.doubleValue());
         if (sol[2].doubleValue() == 3) {
-            inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(1), new Fraction(0));
+            inifinityPoints[0] = new Point3D(Fraction.ZERO, Fraction.ONE, Fraction.ZERO);
         } else {
-            inifinityPoints[0] = new Point3D(new Fraction(0), new Fraction(sol[0]), new Fraction(1));
+            inifinityPoints[0] = new Point3D(Fraction.ZERO, sol[0], Fraction.ONE);
         }
-        inifinityPoints[1] = new Point3D(new Fraction(0), new Fraction(sol[1]), new Fraction(1));
+        inifinityPoints[1] = new Point3D(Fraction.ZERO, sol[1], Fraction.ONE);
         return inifinityPoints;
     }
 

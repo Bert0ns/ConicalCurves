@@ -1,7 +1,7 @@
 package org.com;
 
+import org.apache.commons.numbers.fraction.Fraction;
 import org.jetbrains.annotations.NotNull;
-import org.oldfiles.Fraction;
 
 public abstract class Mathematics {
     /**
@@ -44,9 +44,9 @@ public abstract class Mathematics {
      */
     public static Fraction @NotNull [] solSecondGradeEquation(final @NotNull Fraction coefa, final @NotNull Fraction coefb, final @NotNull Fraction coefc) {
         Fraction[] sol = new Fraction[3];
-        sol[0] = new Fraction(0);
-        sol[1] = new Fraction(0);
-        sol[2] = new Fraction(0);
+        sol[0] = Fraction.ZERO;
+        sol[1] = Fraction.ZERO;
+        sol[2] = Fraction.ZERO;
         double a = coefa.doubleValue();
         double b = coefb.doubleValue();
         double c = coefc.doubleValue();
@@ -57,19 +57,19 @@ public abstract class Mathematics {
         ax^2 + bx + c = 0
         */
         if (a == 0) {
-            sol[0] = new Fraction(0);
-            sol[1] = new Fraction(-c / b);
-            sol[2] = new Fraction(3);
+            //sol[0] = Fraction.ZERO;
+            sol[1] = Fraction.from(-c / b);
+            sol[2] = Fraction.from(3);
         } else if (discriminant < 0) {
             System.out.println("Error, Equation solutions complex");
-            sol[2] = new Fraction(0);
+            //sol[2] = Fraction.ZERO;
         } else if (discriminant == 0) {
-            sol[0] = sol[1] = new Fraction((-b - Math.sqrt(discriminant)) / (2 * a));
-            sol[2] = new Fraction(1);
+            sol[0] = sol[1] = Fraction.from(-b - Math.sqrt(discriminant) / (2 * a));
+            sol[2] = Fraction.ONE;
         } else if (discriminant > 0) {
-            sol[0] = new Fraction((-b - Math.sqrt(discriminant)) / (2 * a));
-            sol[1] = new Fraction((-b + Math.sqrt(discriminant)) / (2 * a));
-            sol[2] = new Fraction(2);
+            sol[0] = Fraction.from((-b - Math.sqrt(discriminant)) / (2 * a));
+            sol[1] = Fraction.from((-b + Math.sqrt(discriminant)) / (2 * a));
+            sol[2] = Fraction.from(2);
         }
         return sol;
     }

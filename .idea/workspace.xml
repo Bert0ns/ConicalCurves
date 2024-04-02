@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04c136f0-bb52-4fa0-9311-ca1c082f483c" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/com/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/ConicCurve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Mathematics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Mathematics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/Point3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/com/PolarLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/com/PolarLine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConicalCurves.executor": "Debug",
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Maven.ConicalCurves [clean].executor": "Run",
     "Maven.ConicalCurves [deploy].executor": "Run",
     "Maven.ConicalCurves [test].executor": "Run",
@@ -108,7 +113,8 @@
       <workItem from="1711632139683" duration="442000" />
       <workItem from="1711749011689" duration="5433000" />
       <workItem from="1711797718071" duration="1504000" />
-      <workItem from="1711799959338" duration="316000" />
+      <workItem from="1711799959338" duration="1018000" />
+      <workItem from="1712051827798" duration="2871000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
@@ -286,7 +292,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711754447188</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="downloaded a library that takes care of fraction objects">
+      <option name="closed" value="true" />
+      <created>1711800913093</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1711800913093</updated>
+    </task>
+    <task id="LOCAL-00024" summary="update">
+      <option name="closed" value="true" />
+      <created>1711800938553</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1711800938553</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +334,7 @@
     <MESSAGE value="Introduction of class PolarLine.java" />
     <MESSAGE value="reformatting files" />
     <MESSAGE value="bug fix on  ConicCurve.toString()" />
+    <MESSAGE value="downloaded a library that takes care of fraction objects" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>

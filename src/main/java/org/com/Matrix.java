@@ -1,7 +1,7 @@
 package org.com;
 
+import org.apache.commons.numbers.fraction.Fraction;
 import org.jetbrains.annotations.NotNull;
-import org.oldfiles.Fraction;
 
 public class Matrix {
     private final Fraction[][] data;
@@ -41,7 +41,7 @@ public class Matrix {
         this.data = new Fraction[this.ncols][this.nrows];
         for (int i = 0; i < ncols; i++) {
             for (int j = 0; j < nrows; j++) {
-                this.data[i][j] = new Fraction(data[i][j]);
+                this.data[i][j] = Fraction.from(data[i][j]);
             }
         }
     }
@@ -50,11 +50,11 @@ public class Matrix {
         if (nrows != ncols) {
             return null;
         } else if (nrows == 1) {
-            return new Fraction(data[0][0]);
+            return data[0][0];
         } else if (nrows == 2) {
-            Fraction det = new Fraction(data[0][0]);
+            Fraction det = data[0][0];
             det.multiply(data[1][1]);
-            det.subtractFraction(new Fraction(data[1][0]).multiply(data[0][1]));
+            det.subtract(data[1][0]).multiply(data[0][1]);
             return det;
         } else if (nrows == 3) {
             /*
@@ -63,17 +63,17 @@ public class Matrix {
             02 12 22
             */
 
-            Fraction f1 = new Fraction(data[0][0]);
+            Fraction f1 = data[0][0];
             f1.multiply(data[1][1]).multiply(data[2][2]);
-            f1.addFraction(new Fraction(data[1][0]).multiply(data[2][1]).multiply(data[0][2]));
-            f1.addFraction(new Fraction(data[2][0]).multiply(data[0][1]).multiply(data[1][2]));
+            f1.add(data[1][0]).multiply(data[2][1]).multiply(data[0][2]);
+            f1.add(data[2][0]).multiply(data[0][1]).multiply(data[1][2]);
 
-            Fraction f2 = new Fraction(data[2][0]);
+            Fraction f2 = data[2][0];
             f2.multiply(data[1][1]).multiply(data[0][2]);
-            f2.addFraction(new Fraction(data[1][0]).multiply(data[0][1]).multiply(data[2][2]));
-            f2.addFraction(new Fraction(data[0][0]).multiply(data[2][1]).multiply(data[1][2]));
+            f2.add(data[1][0]).multiply(data[0][1]).multiply(data[2][2]);
+            f2.add(data[0][0]).multiply(data[2][1]).multiply(data[1][2]);
 
-            return f1.subtractFraction(f2);
+            return f1.subtract(f2);
         }
 
         return null;
@@ -155,7 +155,7 @@ public class Matrix {
                     continue;
                 }
 
-                axx.getData()[x][y++] = new Fraction(src.getData()[i][j]);
+                axx.getData()[x][y++] = src.getData()[i][j];
             }
             x++;
             y = 0;

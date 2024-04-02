@@ -1,15 +1,14 @@
 package org.com;
 
 import org.jetbrains.annotations.NotNull;
-import org.oldfiles.Fraction;
-
+import org.apache.commons.numbers.fraction.Fraction;
 import java.util.Arrays;
 
 public class Point3D {
-    Fraction[] coord;
+    Fraction[] coordinates;
 
     public Point3D() {
-        coord = new Fraction[3];
+        coordinates = new Fraction[3];
     }
 
     /**
@@ -18,18 +17,18 @@ public class Point3D {
      * @param coordinates homogeneous coordinates of a point [o,x,y]
      */
     public Point3D(@NotNull Fraction[] coordinates) {
-        if (coord.length != 3) {
+        if (this.coordinates.length != 3) {
             throw new IllegalArgumentException("Wrong number of coordinates for a Point3D");
         }
-        this.coord = coordinates;
+        this.coordinates = coordinates;
         reduceToMinimalForm();
     }
 
     public Point3D(Fraction o, Fraction x, Fraction y) {
-        coord = new Fraction[3];
-        coord[0] = o;
-        coord[1] = x;
-        coord[2] = y;
+        coordinates = new Fraction[3];
+        coordinates[0] = o;
+        coordinates[1] = x;
+        coordinates[2] = y;
 
         reduceToMinimalForm();
     }
@@ -38,19 +37,19 @@ public class Point3D {
      * Simplifies the homogeneous coordinates in their minimal form
      */
     public void reduceToMinimalForm() {
-        if (coord[0].doubleValue() == 0) {
+        if (coordinates[0].doubleValue() == 0) {
             return;
         }
 
-        coord[1].divide(coord[0]);
-        coord[2].divide(coord[0]);
-        coord[0].divide(coord[0]);
+        coordinates[1].divide(coordinates[0]);
+        coordinates[2].divide(coordinates[0]);
+        coordinates[0].divide(coordinates[0]);
     }
 
     @Override
     public String toString() {
         return "Point3D{" +
-                "coordinates=" + Arrays.toString(coord) +
+                "coordinates=" + Arrays.toString(coordinates) +
                 '}';
     }
 
@@ -59,7 +58,7 @@ public class Point3D {
             return toString();
         }
         return "Point3D{" +
-                "coordinates=" + "[" + coord[0].toString(true) + ", " + coord[1].toString(true) + ", " + coord[2].toString(true) + "]" +
+                "coordinates=" + "[" + coordinates[0].toString() + ", " + coordinates[1].toString() + ", " + coordinates[2].toString() + "]" +
                 '}';
     }
 }
